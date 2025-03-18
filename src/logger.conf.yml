@@ -1,0 +1,7 @@
+config:
+  logs:
+    # Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+    log_level: INFO
+
+    # Log format: console, json, logfmt
+    log_format: console

@@ -97,4 +97,6 @@ def get_logger(name, level=logging.INFO, format_type='custom'):
     logger.addHandler(stdout_handler)
     logger.addHandler(stderr_handler)
 
+    logger.debug(f"Logger initialized with the following parameters : log_level={logging.getLevelName(level)}, log_format={format_type}")
+
     return logger

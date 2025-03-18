@@ -1,5 +1,7 @@
 import logging
+import yaml
 from logger import get_logger
+import os
 
 
 def print_something(lvl, msg, format):
@@ -42,7 +44,12 @@ def main():
     # logger.critical("This is a critical message")
 
 
-logger = get_logger(__name__, level=logging.DEBUG, format_type='custom')
+with open(f"{os.path.dirname(os.path.abspath(__file__))}/logger.conf.yml", 'r') as file:
+    logger_config = yaml.safe_load(file)
+    log_level = logger_config['config']['logs']['log_level']
+    log_format = logger_config['config']['logs']['log_format']
+logger = get_logger(__name__, level=log_level, format_type=log_format)
+# logger.debug(f"Logger initialized with the following parameters : log_level={log_level}, log_format={log_format}")
 
 if __name__ == "__main__":
     main()
