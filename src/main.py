@@ -49,7 +49,6 @@ with open(f"{os.path.dirname(os.path.abspath(__file__))}/logger.conf.yml", 'r') 
     log_level = logger_config['config']['logs']['log_level']
     log_format = logger_config['config']['logs']['log_format']
 logger = get_logger(__name__, level=log_level, format_type=log_format)
-# logger.debug(f"Logger initialized with the following parameters : log_level={log_level}, log_format={log_format}")
 
 if __name__ == "__main__":
     main()
