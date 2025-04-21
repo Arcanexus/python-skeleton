@@ -4,7 +4,7 @@ pythonpath = [
   ".", "src",
 ]
 required_plugins = [
-  "pytest-cov==6.0.0",
+  "pytest-cov==6.1.1",
   "pytest-mock==3.14.0"
 ]
 
